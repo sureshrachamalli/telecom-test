@@ -39,7 +39,8 @@ The following project is created for ChatR interview demo purpose only:
     * For Monthly earned Reward points [getmonthlyrewards](localhost:8081/rewards/getmonthlyrewards)
     * For Quarterly earned Reward points [getquarterlyRewards](localhost:8081/rewards/getquarterlyRewards)
 4. Older than 3 months scheduled to purge every day in midnight.
-5. Records can be observed from even H2 console. [H2 database console ](http://localhost:8081/h2)
+5. In order run the all Integration and unit tests please run the command `mvn test`
+6. Records can be observed from even H2 console. [H2 database console ](http://localhost:8081/h2)
 
 
 ##Other Technical Details
@@ -55,6 +56,6 @@ The following project is created for ChatR interview demo purpose only:
 
 * [Please follow the Root project directory](Documents/postman/chatr-rewards-api.postman_collection.json)
 * [Swagger-ui.html](http://localhost:8081/swagger-ui/index.html#/)
-* [H2 database console ](http://localhost:8081/h2)
+* [H2 database console ](http://localhost:8081/h2/login.do)
 * [Actuator](http://localhost:8081/actuator)
 
