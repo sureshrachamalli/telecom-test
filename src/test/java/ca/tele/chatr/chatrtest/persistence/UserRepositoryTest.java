@@ -18,10 +18,10 @@ class UserRepositoryTest {
 
     @Test
     void findByUserName_success_scenario() {
-        UserEntity userEntity = new UserEntity(1l, "suresh");
+        UserEntity userEntity = new UserEntity(null, "suresh");
         userRepository.save(userEntity);
         UserEntity returnUserEntity = userRepository.findByUserName("suresh");
-        assertEquals(1l, returnUserEntity.getId());
+        assertEquals("suresh", returnUserEntity.getUserName());
     }
 
     @Test
