@@ -31,6 +31,13 @@ public class PaymentServiceImpl implements PaymentService {
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     *  Description: Allows RewardsAndPaymentRequest after all validations from controller and fetch the userId from user table, also calculates the rewards for given entity
+     *               finally if all above two scenarios executes successful saves entity into DB.
+     * @param rewardsAndPaymentRequest
+     * @return ResponseDto<RewardsAndPaymentsEntity>
+     * @throws Error
+     */
     @Override
     public ResponseDto<RewardsAndPaymentsEntity> saveRewardsAndPayments(RewardsAndPaymentRequest rewardsAndPaymentRequest) throws Error{
         ResponseDto<RewardsAndPaymentsEntity> response = null;
@@ -50,6 +57,12 @@ public class PaymentServiceImpl implements PaymentService {
         return response;
     }
 
+    /**
+     *  Description: Returns the RewardsAndPaymentEntity for given userName if exists else throws NoRecordFoundException.
+     * @param userName
+     * @return ResponseDto<List<RewardsAndPaymentsEntity>>
+     * @throws Error
+     */
     @Override
     public ResponseDto<List<RewardsAndPaymentsEntity>> getRewardsAndPayments(String userName) {
         List<RewardsAndPaymentsEntity> rewardsAndPaymentsEntityList = new ArrayList();
@@ -66,6 +79,13 @@ public class PaymentServiceImpl implements PaymentService {
         return ResponseDto.forSuccess(rewardsAndPaymentsEntityList);
     }
 
+    /**
+     *  Description: Returns the userId for given userName & operationName.
+     *              If userName exists returns it irrespective of Operation else if save operation creates userId and returns ID or else throw BadRequestException.
+     * @param userName, operationName(FETCH/SAVE)
+     * @return userId
+     * @throws Error
+     */
     @Override
     public Long provideUserId(String userName, String operationName){
         UserEntity userExistsEntity = userRepository.findByUserName(userName.toLowerCase());
@@ -92,6 +112,12 @@ public class PaymentServiceImpl implements PaymentService {
 
     }
 
+    /**
+     * Description: bind the RewardsAndPaymentRequest & userId to RewardsAndPaymentsEntity and returns the object.
+     * @param rewardsAndPaymentRequest
+     * @param userId
+     * @return RewardsAndPaymentsEntity
+     */
     private RewardsAndPaymentsEntity buildPaymentEntity(RewardsAndPaymentRequest rewardsAndPaymentRequest, Long userId){
         RewardsAndPaymentsEntity rewardsAndPaymentsEntity = new RewardsAndPaymentsEntity();
         rewardsAndPaymentsEntity.setUserId(userId);
@@ -102,6 +128,11 @@ public class PaymentServiceImpl implements PaymentService {
         return rewardsAndPaymentsEntity;
     }
 
+    /**
+     * Description: Calculates 2 points for every dollar spent over $100 in each transaction, plus 1 point for every dollar spent over $50 in each transaction.
+     * @param rewardsAndPaymentRequest
+     * @return RewardPoints
+     */
     private Integer calculateRewardsOnPurchase(RewardsAndPaymentRequest rewardsAndPaymentRequest){
         Integer rewardPoints = 0;
         if(rewardsAndPaymentRequest.getProductPrice() > 0.0 && rewardsAndPaymentRequest.getProductQuantity() > 0 ){

@@ -21,6 +21,11 @@ public class RewardServiceImpl implements RewardService{
     @Autowired
     private PaymentService paymentService;
 
+    /**
+     *  Description: For the given userName find the transactions and summarize the total reward points per day and returns the total points on daily basis.
+     * @param userName
+     * @return ResponseDto<Rewards>
+     */
     @Override
     public ResponseDto<Rewards> getTotalRewardForUserPerDay(String userName) {
         Long totalRewards = null;
@@ -33,6 +38,11 @@ public class RewardServiceImpl implements RewardService{
         return ResponseDto.forSuccess(new Rewards(RewardsUtil.DAILY, totalRewards, userName));
     }
 
+    /**
+     *  Description: For the given userName find the transactions and summarize the total reward points per month and returns the total points on monthly basis.
+     * @param userName
+     * @return ResponseDto<Rewards>
+     */
     @Override
     public ResponseDto<Rewards> getMonthlyRewardsForUser(String userName) {
         Long totalRewards = null;
@@ -46,6 +56,11 @@ public class RewardServiceImpl implements RewardService{
         return ResponseDto.forSuccess(new Rewards(RewardsUtil.MONTHLY, totalRewards, userName));
     }
 
+    /**
+     *  Description: For the given userName find the transactions and summarize the total reward points per quarterly and returns the total points on quarterly basis.
+     * @param userName
+     * @return ResponseDto<Rewards>
+     */
     @Override
     public ResponseDto<Rewards> getQuarterlyRewardsForUser(String userName) {
         Long totalRewards = null;
@@ -58,6 +73,10 @@ public class RewardServiceImpl implements RewardService{
         return ResponseDto.forSuccess(new Rewards(RewardsUtil.QUARTERLY, totalRewards, userName));
     }
 
+
+    /**
+     *  Description: Purge the all transactions on daily basis older than 3 months.
+     */
     @Override
     public void purgeOlderThanQuarterPaymentAndRewardTxns(){
         log.info("Purge process for the older than date {} was triggered..",LocalDate.now().minusMonths(3));
