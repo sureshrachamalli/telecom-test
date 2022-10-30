@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "5af5f5d9-d2da-428d-b713-95cfb31679ee",
+		"name": "chatr-rewards-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "savepayment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"naresh\",\r\n    \"productName\":\"watermelon\",\r\n    \"productPrice\":25.0,\r\n    \"productQuantity\":5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/payment/savepayment",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"payment",
+						"savepayment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getpayments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userName",
+						"value": "naresh",
+						"description": "suresh",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/payment/getpayments",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"payment",
+						"getpayments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gettotalrewardsPerDay",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userName",
+						"value": "naresh",
+						"description": "suresh",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/rewards/gettotalrewards",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"rewards",
+						"gettotalrewards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getmonthlyrewards",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userName",
+						"value": "naresh",
+						"description": "suresh",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/rewards/getmonthlyrewards",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"rewards",
+						"getmonthlyrewards"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
