@@ -22,7 +22,7 @@ The following project is created for ChatR interview demo purpose only:
 
 ## How to Download and set up the project
 
-1. Download project zip file from [link]() into you local machine dev space //TODO
+1. Download project zip file from [link](https://github.com/sureshrachamalli/telecom-test/archive/refs/heads/main.zip) into you local machine dev space
 2. Unzip the project into dev space.
 3. From IntelliJ open project.
 4. All external dependency libraries will be downloaded.
