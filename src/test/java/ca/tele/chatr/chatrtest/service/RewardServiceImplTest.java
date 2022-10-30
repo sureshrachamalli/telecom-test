@@ -1,16 +1,11 @@
 package ca.tele.chatr.chatrtest.service;
 
 import ca.tele.chatr.chatrtest.ChatrTestApplication;
-import ca.tele.chatr.chatrtest.exception.BadRequestException;
 import ca.tele.chatr.chatrtest.model.ResponseDto;
 import ca.tele.chatr.chatrtest.model.ResponseState;
 import ca.tele.chatr.chatrtest.model.Rewards;
-import ca.tele.chatr.chatrtest.model.RewardsAndPaymentRequest;
-import ca.tele.chatr.chatrtest.persistence.RewardsAndPaymentsEntity;
 import ca.tele.chatr.chatrtest.persistence.RewardsAndPaymentsRepository;
-import ca.tele.chatr.chatrtest.persistence.UserEntity;
 import ca.tele.chatr.chatrtest.utility.RewardsUtil;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
