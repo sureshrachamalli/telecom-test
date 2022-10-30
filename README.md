@@ -54,7 +54,7 @@ The following project is created for ChatR interview demo purpose only:
 
 ## References for Postman Collection/Swagger/H2/Actuator
 
-* [Please follow the Root project directory](Documents/postman/chatr-rewards-api.postman_collection.json)
+*  [Potman Collection](Documents/postman/chatr-rewards-api.postman_collection.json) (Please follow the Root project directory)
 * [Swagger-ui.html](http://localhost:8081/swagger-ui/index.html#/)
 * [H2 database console ](http://localhost:8081/h2/login.do)
 * [Actuator](http://localhost:8081/actuator)
